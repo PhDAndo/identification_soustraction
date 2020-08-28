@@ -67,7 +67,7 @@ while True:
     else:
         old_3 = 0
     
-    fps = cv2.geTickFrequency()/(cv2.getTickCount() - tickmark)
+    fps = cv2.getTickFrequency()/(cv2.getTickCount() - tickmark)
     cv2.putText(frame, "FPS: {:05.2f} Seuil: {:d}".format(fps, seuil), (10, 30), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, color_infos, 1)
     cv2.putText(frame, "{:04d} {:04d} {:04d}".format(vehicule1, vehicule2, vehicule3), (xmin1, ymin-10), cv2.FONT_HERSHEY_COMPLEX_SMALL, 2, (255, 255, 255), 2)
     cv2.rectangle(frame, (xmin1, ymin), (xmax1, ymax), (0, 0, 255) if old_1 else (255, 0, 0), 3)
